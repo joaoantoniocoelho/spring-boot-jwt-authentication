@@ -1,16 +1,18 @@
 # Spring Boot JWT Authentication
 This project provides a basic JWT authentication implementation using Spring Boot.
 
+I used [Auth0's Java implementation of JWT](https://github.com/auth0/java-jwt)
+
 ## How to run?
 To run this project, you need to set 4 environment variables in your IDE:
 
-> `POSTGRES_URL`: Your PostgreSQL DB URL
+> `POSTGRES_URL`: Your PostgreSQL DB URL.
 
-> `POSTGRES_USER`: Your PostgreSQL DB User
+> `POSTGRES_USER`: Your PostgreSQL DB User.
 
-> `POSTGRES_PASSWORD`: Your PostgreSQL DB Password
+> `POSTGRES_PASSWORD`: Your PostgreSQL DB Password.
 
-> `TOKEN_SECRET`: Secret to generate tokens
+> `TOKEN_SECRET`: Secret to generate your JWT's.
 
 The project will run on http://localhost:8081.
 
