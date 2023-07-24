@@ -1,0 +1,50 @@
+server:
+  port: 8081
+  error:
+    include-stacktrace: never
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+  datasource:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    hikari:
+      schema: public
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    properties:
+      org:
+        hibernate:
+          envers:
+            audit_table_suffix: _AUDIT
+            revision_field_name: REVISION_ID
+            revision_type_field_name: REVISION_TYPE
+  devtools:
+    restart:
+      exclude: logs/**
+  sql:
+    init:
+      platform: postgres
+
+logging:
+  level:
+    root: INFO
+    org.springframework: ERROR
+    org.springframework.beans.factory: ERROR
+
+api:
+  security:
+    token:
+      secret: ${TOKEN_SECRET}
