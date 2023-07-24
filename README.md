@@ -30,7 +30,7 @@ Follow the steps below to test the JWT authentication:
 ```json
 {
   "login": "test@test.com",
-  "password": "test123",
+  "password": "test123"
 }
 ```
 4. The response from `POST /auth/login` will contain your JWT.
